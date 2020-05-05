@@ -89,7 +89,8 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver',
 	\ 'coc-json',
 	\ 'coc-go',
-	\ 'coc-css'
+	\ 'coc-css',
+   \ 'coc-python'
 \ ]
 
 " Mappings
@@ -107,7 +108,7 @@ vnoremap <silent> <space>fp :CtrlPBuffer<CR>
 vnoremap <silent> <space>fa :CtrlPMixed<CR>
 
 " Providers
-let g:python3_host_prog = 'C:\Users\David\AppData\Local\Programs\Python\Python37-32\python.exe'
+let g:python3_host_prog = '/usr/bin/python' 
 let g:loaded_python_provider = 0
 
 " Deoplete
