@@ -23,6 +23,7 @@ call plug#begin()
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'sheerun/vim-polyglot'
+  Plug 'editorconfig/editorconfig-vim'
   
   " Autocomplete
   " Plug 'Shougo/deoplete.nvim', {'do':':UpdateRemotePlugins'}
@@ -90,7 +91,9 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-go',
 	\ 'coc-css',
-   \ 'coc-python'
+   \ 'coc-python',
+   \ 'coc-elixir',
+   \ 'coc-rls'
 \ ]
 
 " Mappings
@@ -108,7 +111,7 @@ vnoremap <silent> <space>fp :CtrlPBuffer<CR>
 vnoremap <silent> <space>fa :CtrlPMixed<CR>
 
 " Providers
-let g:python3_host_prog = '/usr/bin/python' 
+let g:python3_host_prog = '/usr/bin/python3' 
 let g:loaded_python_provider = 0
 
 " Deoplete
