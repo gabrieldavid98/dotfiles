@@ -51,9 +51,13 @@
 ;;   :ensure t
 ;;   :config (load-theme 'gruvbox t))
 
-(use-package gruber-darker-theme
+;; (use-package gruber-darker-theme
+;;   :ensure t
+;;   :config (load-theme 'gruber-darker t))
+
+(use-package nord-theme
   :ensure t
-  :config (load-theme 'gruber-darker t))
+  :config (load-theme 'nord t))
 
 (use-package ace-window
   :ensure t
@@ -95,12 +99,16 @@
   :ensure t
   :config (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package php-mode
+  :ensure t)
+
 (use-package web-mode
   :ensure t
   :config
   (add-hook 'web-mode-hook 'my-web-mode-hook)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+  (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
   (setq web-mode-enable-auto-closing t))
 
@@ -145,9 +153,13 @@
   :ensure t
   :after company
   :hook ((clojure-mode . lsp)
+	 (elixir-mode . lsp)
+	 (php-mode . lsp)
 	 (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deffered)
-  :init (setq lsp-keymap-prefix "C-c l")
+  :init (progn
+	  (setq lsp-keymap-prefix "C-c l")
+	  (add-to-list 'exec-path "~/.elixir_ls"))
   :config
   (setq gc-cons-threshold 100000000
         read-process-output-max (* 1024 1024)
@@ -177,16 +189,3 @@
   :ensure t)
 
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(gruvbox-theme cider magit yasnippet which-key web-mode use-package try projectile neotree lsp-ui gruber-darker-theme flycheck editorconfig dap-mode counsel alchemist)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
