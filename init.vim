@@ -102,6 +102,9 @@ inoremap jk <ESC>
 nnoremap <silent> <space>p :bp<CR>
 nnoremap <silent> <space><TAB> :bn<CR>
 
+" ctrlp configs
+let g:ctrlp_custom_ignore = '\v[\/](_build|deps|node_modules)|(\.(git|svn|hg))$'
+
 " ctrlp mapping
 nnoremap <silent> <space>ff :CtrlP<CR>
 nnoremap <silent> <space>fp :CtrlPBuffer<CR>
