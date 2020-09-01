@@ -25,7 +25,7 @@
 ;; (setq split-height-threshold nil
 ;;       split-width-threshold 0)
 
-(set-frame-font "Ubuntu Mono 12" nil t)
+;; (set-frame-font "Ubuntu Mono 12" nil t)
 
 (defalias 'list-buffers 'ibuffer)
 
@@ -189,3 +189,16 @@
   :ensure t)
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(cider magit dap-mode yasnippet lsp-ui lsp-mode flycheck projectile neotree editorconfig elixir-mode web-mode php-mode company counsel ace-window nord-theme which-key try use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
